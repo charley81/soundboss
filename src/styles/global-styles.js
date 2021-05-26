@@ -18,11 +18,12 @@ const globalStyles = css`
     --color-light: #ffffff;
     --color-mid: #f8f8f8;
     --transition: all 0.2s ease;
-    --border-radius: 5px;
-    --letter-spacing: 2px;
+    --border-radius: 3px;
+    --letter-spacing: 5px;
     --font-family: "Bellota Text";
     --max-width: 1150px;
     --fixed-width: 650px;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   *,
@@ -113,6 +114,8 @@ const globalStyles = css`
   /*  global classes */
 
   .btn {
+    display: block;
+    width: 75%;
     text-transform: uppercase;
     background: var(--color-primary);
     color: var(--color-light);
@@ -122,10 +125,10 @@ const globalStyles = css`
     font-weight: 400;
     transition: var(--transition);
     font-size: 0.875rem;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
   }
   .btn:hover {
     background: transparent;
