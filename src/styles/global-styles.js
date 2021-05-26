@@ -12,19 +12,142 @@ Supported subsets: [cyrillic,latin,latin-ext,vietnamese]
 */
 
 const globalStyles = css`
+  :root {
+    --color-primary: #3634c8;
+    --color-dark: #000000;
+    --color-light: #ffffff;
+    --color-mid: #f8f8f8;
+    --transition: all 0.2s ease;
+    --border-radius: 5px;
+    --letter-spacing: 2px;
+    --font-family: "Bellota Text";
+    --max-width: 1150px;
+    --fixed-width: 650px;
+  }
+
+  *,
+  ::before,
+  ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: "Bellota Text";
+    font-family: var(--font-family);
     line-height: 2;
-    letter-spacing: 2px;
+    letter-spacing: var(--letter-spacing);
+    background: var(--colo-mid);
+    color: var(--color-dark);
+    font-size: 0.875rem;
+  }
+
+  ul,
+  li {
+    list-style-type: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.25;
   }
 
   h1 {
-    font-weight: 700;
-    font-size: 4rem;
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  h4 {
+    font-size: 0.875rem;
+  }
+
+  a {
+    font-weight: 400;
+    text-decoration: none;
   }
 
   p {
     font-weight: 300;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  @media screen and (min-width: 800px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+    h2 {
+      font-size: 2.5rem;
+    }
+    h3 {
+      font-size: 1.75rem;
+    }
+    h4 {
+      font-size: 1rem;
+    }
+    body {
+      font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1;
+    }
+  }
+
+  /*  global classes */
+
+  .btn {
+    text-transform: uppercase;
+    background: var(--color-primary);
+    color: var(--color-light);
+    padding: 0.375rem 0.75rem;
+    letter-spacing: var(--spacing);
+    display: inline-block;
+    font-weight: 400;
+    transition: var(--transition);
+    font-size: 0.875rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius);
+  }
+  .btn:hover {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  /* section */
+  .section {
+    padding: 5rem 0;
+    position: relative;
+  }
+
+  .section-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: var(--max-width);
+  }
+  @media screen and (min-width: 992px) {
+    .section-center {
+      width: 95vw;
+    }
   }
 `
 
