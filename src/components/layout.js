@@ -1,7 +1,7 @@
 import * as React from "react"
 import globalStyles from "../styles/global-styles"
 import { Global } from "@emotion/react"
-import Nav from "./nav"
+import { Nav } from "../components"
 
 const Layout = ({ children }) => {
   return (
