@@ -13,8 +13,7 @@ const Hero = () => {
         .hero-img {
           display: block;
           height: 100%;
-          position: relative;
-          top: 250px;
+          background-position: bottom;
         }
 
         .hero-content {
@@ -25,6 +24,7 @@ const Hero = () => {
           height: 100%;
           display: grid;
           place-items: center;
+          margin-top: -10rem;
         }
 
         article {
