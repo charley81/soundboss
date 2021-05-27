@@ -14,6 +14,7 @@ const Hero = () => {
           display: block;
           height: 100%;
           background-position: bottom;
+          position: relative;
         }
 
         .hero-content {
@@ -45,7 +46,7 @@ const Hero = () => {
         layout="fullWidth"
         placeholder="tracedSVG"
         className="hero-img"
-      />
+      ></StaticImage>
 
       {/* hero content */}
       <div className="hero-content">

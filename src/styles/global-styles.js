@@ -16,7 +16,7 @@ const globalStyles = css`
     --color-primary: #3634c8;
     --color-dark: #000000;
     --color-light: #ffffff;
-    --color-mid: #f8f8f8;
+    --color-mid: #f6f6f6f6;
     --transition: all 0.2s ease;
     --border-radius: 3px;
     --letter-spacing: 5px;
@@ -140,13 +140,11 @@ const globalStyles = css`
   .section {
     padding: 5rem 0;
     position: relative;
-  }
-
-  .section-center {
     width: 90vw;
     margin: 0 auto;
     max-width: var(--max-width);
   }
+
   @media screen and (min-width: 992px) {
     .section-center {
       width: 95vw;
