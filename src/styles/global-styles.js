@@ -145,6 +145,14 @@ const globalStyles = css`
     max-width: var(--max-width);
   }
 
+  .name {
+    color: var(--color-primary);
+  }
+
+  .section-content {
+    margin-top: 4rem;
+  }
+
   @media screen and (min-width: 992px) {
     .section-center {
       width: 95vw;

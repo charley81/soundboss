@@ -8,12 +8,7 @@ const About = () => {
     <section
       className="section"
       css={css`
-        span {
-          color: var(--color-primary);
-        }
-
-        .about-content {
-          margin-top: 4rem;
+        .section-content {
           display: grid;
           grid-gap: 4rem;
           grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -37,12 +32,12 @@ const About = () => {
     >
       {/* title */}
       <Title title="About" />
-      <p className="tagline">
-        Some Info About <span>SoundBoss</span> studios...
+      <p>
+        Some Info About <span className="name">SoundBoss</span> studios...
       </p>
 
       {/* content */}
-      <div className="about-content">
+      <div className="section-content">
         {aboutContent.map(({ id, icon, label, text }) => {
           return (
             <article key={id}>
