@@ -9,17 +9,69 @@ const GridRooms = ({ rooms, title }) => {
     <section
       className="section"
       css={css`
+        .section-content {
+          display: grid;
+          width: 90vw;
+          max-width: var(--max-width);
+          margin: 0 auto;
+          gap: 1rem;
+          /* safari workaround */
+          grid-gap: 1rem;
+          grid-template-rows: 300px 300px;
+          grid-auto-rows: 300px;
+        }
+
         .room-image {
+          height: 100%;
           border-radius: var(--border-radius);
+          transition: var(--transition);
+        }
+
+        article {
+          position: relative;
+          overflow: hidden;
+          border-radius: var(--border-radius);
+          background: var(--color-dark);
+
+          &:hover .room-image {
+            opacity: 0.2;
+          }
+
+          &:hover .room-info {
+            opacity: 1;
+          }
+        }
+
+        .room-info {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: var(--color-light);
+          width: 100%;
+          transition: var(--transition);
+          text-align: center;
+          opacity: 0;
+        }
+
+        .btn {
+          margin-top: 4rem;
+
+          &:hover {
+            background: var(--color-light);
+            border-color: transparent;
+          }
         }
       `}
     >
+      {/* title section */}
       <Title title={title || "Rooms"} />
       <p>
         Click A Image To View <span className="name">SoundBoss</span> room
         info...
       </p>
 
+      {/* image and hover content */}
       <div className="section-content">
         {rooms.map(room => {
           const { id } = room
@@ -44,6 +96,11 @@ const GridRooms = ({ rooms, title }) => {
           )
         })}
       </div>
+
+      {/* go to all rooms page */}
+      <Link to="/" className="btn">
+        All Rooms
+      </Link>
     </section>
   )
 }
