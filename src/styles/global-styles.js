@@ -115,6 +115,7 @@ const globalStyles = css`
 
   .btn {
     display: block;
+    text-align: center;
     width: 75%;
     text-transform: uppercase;
     background: var(--color-primary);
@@ -136,7 +137,6 @@ const globalStyles = css`
     color: var(--color-primary);
   }
 
-  /* section */
   .section {
     padding: 5rem 0;
     position: relative;

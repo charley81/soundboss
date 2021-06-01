@@ -2,6 +2,7 @@ import React from "react"
 import { Title } from "../components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
+import { Link } from "gatsby"
 
 const GridRooms = ({ rooms, title }) => {
   return (
@@ -20,7 +21,7 @@ const GridRooms = ({ rooms, title }) => {
       </p>
 
       <div className="section-content">
-        {rooms.map((room, index) => {
+        {rooms.map(room => {
           const { id } = room
           const { name, type } = room.data
           const image = room.data.image.localFiles[0]
@@ -32,6 +33,13 @@ const GridRooms = ({ rooms, title }) => {
                 alt={name}
                 className="room-image"
               />
+              <div className="room-info">
+                <p>{type}</p>
+                <h3>{name}</h3>
+                <Link to="/" className="btn">
+                  Room Info
+                </Link>
+              </div>
             </article>
           )
         })}
