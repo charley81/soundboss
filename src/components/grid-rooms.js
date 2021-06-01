@@ -9,9 +9,12 @@ const GridRooms = ({ rooms, title }) => {
     <section
       className="section"
       css={css`
+        .room-link {
+          cursor: pointer;
+        }
+
         .section-content {
           display: grid;
-          width: 90vw;
           max-width: var(--max-width);
           gap: 1rem;
           /* safari workaround */
@@ -30,10 +33,12 @@ const GridRooms = ({ rooms, title }) => {
           position: relative;
           overflow: hidden;
           border-radius: var(--border-radius);
-          background: var(--color-dark);
+          background: var(--color-primary);
+          height: 100%;
 
           &:hover .room-image {
             opacity: 0.2;
+            box-shadow: var(--box-shadow);
           }
 
           &:hover .room-info {
@@ -52,19 +57,8 @@ const GridRooms = ({ rooms, title }) => {
           text-align: center;
           opacity: 0;
 
-          p {
-            text-transform: uppercase;
-          }
-
           h3 {
             margin: 1rem 0;
-          }
-        }
-
-        .room-btn {
-          &:hover {
-            background: var(--color-light);
-            border-color: transparent;
           }
         }
 
@@ -124,20 +118,20 @@ const GridRooms = ({ rooms, title }) => {
           const image = room.data.image.localFiles[0]
 
           return (
-            <article key={id} className={`article-${index}`}>
-              <GatsbyImage
-                image={getImage(image)}
-                alt={name}
-                className="room-image"
-              />
-              <div className="room-info">
-                <p>{type}</p>
-                <h3>{name}</h3>
-                <Link to="/" className="btn room-btn">
-                  Room Info
-                </Link>
-              </div>
-            </article>
+            <Link to="/" key={id} className={`room-link article-${index}`}>
+              <article className={`article-${index}`}>
+                <GatsbyImage
+                  image={getImage(image)}
+                  alt={name}
+                  className="room-image"
+                />
+                <div className="room-info">
+                  <p>{type}</p>
+                  <h3>{name}</h3>
+                  <p className="click">Click For More Info</p>
+                </div>
+              </article>
+            </Link>
           )
         })}
       </div>
