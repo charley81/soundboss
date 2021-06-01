@@ -115,6 +115,7 @@ const globalStyles = css`
 
   .btn {
     display: block;
+    text-align: center;
     width: 75%;
     text-transform: uppercase;
     background: var(--color-primary);
@@ -129,20 +130,29 @@ const globalStyles = css`
     cursor: pointer;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
-  }
-  .btn:hover {
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    margin: auto;
+
+    &:hover {
+      background: transparent;
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+    }
   }
 
-  /* section */
   .section {
     padding: 5rem 0;
     position: relative;
     width: 90vw;
     margin: 0 auto;
     max-width: var(--max-width);
+  }
+
+  .name {
+    color: var(--color-primary);
+  }
+
+  .section-content {
+    margin-top: 4rem;
   }
 
   @media screen and (min-width: 992px) {
