@@ -130,11 +130,13 @@ const globalStyles = css`
     cursor: pointer;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
-  }
-  .btn:hover {
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
+    margin: auto;
+
+    &:hover {
+      background: transparent;
+      border: 1px solid var(--color-primary);
+      color: var(--color-primary);
+    }
   }
 
   .section {

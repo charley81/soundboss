@@ -13,7 +13,6 @@ const GridRooms = ({ rooms, title }) => {
           display: grid;
           width: 90vw;
           max-width: var(--max-width);
-          margin: 0 auto;
           gap: 1rem;
           /* safari workaround */
           grid-gap: 1rem;
@@ -52,14 +51,60 @@ const GridRooms = ({ rooms, title }) => {
           transition: var(--transition);
           text-align: center;
           opacity: 0;
+
+          p {
+            text-transform: uppercase;
+          }
+
+          h3 {
+            margin: 1rem 0;
+          }
         }
 
-        .btn {
-          margin-top: 4rem;
-
+        .room-btn {
           &:hover {
             background: var(--color-light);
             border-color: transparent;
+          }
+        }
+
+        .btn-wrap {
+          margin-top: 2rem;
+          text-align: center;
+        }
+
+        @media screen and (min-width: 768px) {
+          .section-content {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        @media screen and (min-width: 992px) {
+          .section-content {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 250px 250px;
+            grid-auto-rows: 250px;
+          }
+        }
+
+        @media screen and (min-width: 1200px) {
+          .section-content {
+            grid-template-areas:
+              "a b b"
+              "a c d";
+          }
+
+          .article-0 {
+            grid-area: a;
+          }
+          .article-1 {
+            grid-area: b;
+          }
+          .article-2 {
+            grid-area: c;
+          }
+          .article-3 {
+            grid-area: d;
           }
         }
       `}
@@ -73,13 +118,13 @@ const GridRooms = ({ rooms, title }) => {
 
       {/* image and hover content */}
       <div className="section-content">
-        {rooms.map(room => {
+        {rooms.map((room, index) => {
           const { id } = room
           const { name, type } = room.data
           const image = room.data.image.localFiles[0]
 
           return (
-            <article key={id}>
+            <article key={id} className={`article-${index}`}>
               <GatsbyImage
                 image={getImage(image)}
                 alt={name}
@@ -88,7 +133,7 @@ const GridRooms = ({ rooms, title }) => {
               <div className="room-info">
                 <p>{type}</p>
                 <h3>{name}</h3>
-                <Link to="/" className="btn">
+                <Link to="/" className="btn room-btn">
                   Room Info
                 </Link>
               </div>
@@ -98,9 +143,11 @@ const GridRooms = ({ rooms, title }) => {
       </div>
 
       {/* go to all rooms page */}
-      <Link to="/" className="btn">
-        All Rooms
-      </Link>
+      <div className="btn-wrap">
+        <Link to="/" className="btn">
+          All Rooms
+        </Link>
+      </div>
     </section>
   )
 }
