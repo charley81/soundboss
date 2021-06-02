@@ -17,6 +17,7 @@ const globalStyles = css`
     --color-dark: #000000;
     --color-light: #ffffff;
     --color-mid: #f6f6f6f6;
+    --color-green: #03a678;
     --transition: all 0.2s ease;
     --border-radius: 3px;
     --letter-spacing: 5px;
