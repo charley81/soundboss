@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Hero, Layout, Seo, About, GridRooms } from "../components"
+import { Hero, Layout, Seo, About, GridRooms, Survey } from "../components"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
@@ -13,6 +13,7 @@ const IndexPage = ({ data }) => {
       <Hero />
       <About />
       <GridRooms rooms={rooms} title="Hottest Rooms" />
+      <Survey />
     </Layout>
   )
 }
