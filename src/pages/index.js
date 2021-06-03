@@ -1,10 +1,19 @@
 import * as React from "react"
-import { Hero, Layout, Seo, About, GridRooms, Survey } from "../components"
+import {
+  Hero,
+  Layout,
+  Seo,
+  About,
+  GridRooms,
+  Survey,
+  Reviews,
+} from "../components"
 import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
   const {
-    allAirtable: { nodes: rooms },
+    rooms: { nodes: rooms },
+    customers: { nodes: reviews },
   } = data
 
   return (
@@ -14,13 +23,14 @@ const IndexPage = ({ data }) => {
       <About />
       <GridRooms rooms={rooms} title="Hottest Rooms" />
       <Survey />
+      <Reviews reviews={reviews} />
     </Layout>
   )
 }
 
 export const query = graphql`
   {
-    allAirtable(
+    rooms: allAirtable(
       filter: { table: { eq: "Rooms" } }
       limit: 4
       sort: { fields: data___date, order: DESC }
@@ -37,6 +47,28 @@ export const query = graphql`
               }
             }
           }
+        }
+      }
+    }
+    customers: allAirtable(filter: { table: { eq: "Customers" } }) {
+      nodes {
+        id
+        data {
+          name
+          image {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 150
+                  width: 150
+                  placeholder: TRACED_SVG
+                  layout: FIXED
+                )
+              }
+            }
+          }
+          quote
+          title
         }
       }
     }

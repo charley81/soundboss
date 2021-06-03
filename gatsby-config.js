@@ -42,6 +42,11 @@ module.exports = {
             tableName: `Rooms`,
             mapping: { image: `fileNode` }, // optional, e.g. "text/markdown", "fileNode"
           },
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+            tableName: `Customers`,
+            mapping: { image: `fileNode` }, // optional, e.g. "text/markdown", "fileNode"
+          },
         ],
       },
     },
