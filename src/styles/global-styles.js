@@ -153,7 +153,7 @@ const globalStyles = css`
   }
 
   .section-content {
-    margin-top: 4rem;
+    margin: 4rem auto 0;
   }
 
   @media screen and (min-width: 992px) {
