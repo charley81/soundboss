@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { Title } from "../components"
 import base from "./airtable"
 import { AiFillCheckCircle } from "react-icons/ai"
@@ -119,7 +119,6 @@ const Survey = () => {
       </p>
 
       {/* click a "room card" to vote on your favorite studio room */}
-
       <div className="section-content">
         {items.map(item => {
           const {
