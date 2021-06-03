@@ -29,8 +29,6 @@ const Reviews = ({ reviews = [] }) => {
     })
   }
 
-  console.log(index)
-
   useEffect(() => {
     let slider = setInterval(() => {
       setIndex(oldIndex => {
@@ -51,9 +49,8 @@ const Reviews = ({ reviews = [] }) => {
       className="section"
       css={css`
         .section-content {
-          width: 80vw;
           height: 450px;
-          max-width: 800px;
+          max-width: 900px;
           text-align: center;
           position: relative;
           display: flex;
@@ -63,6 +60,11 @@ const Reviews = ({ reviews = [] }) => {
         .img {
           border-radius: 50%;
           margin-bottom: 1rem;
+        }
+
+        .img-center {
+          display: flex;
+          justify-content: center;
         }
 
         .prev,
@@ -110,6 +112,26 @@ const Reviews = ({ reviews = [] }) => {
         article.nextSlide {
           transform: translateX(100%);
         }
+
+        .name {
+          color: var(--color-primary);
+        }
+
+        .title {
+          font-weight: 700;
+          margin: 1rem 0;
+          text-transform: capitalize;
+        }
+
+        .icon {
+          background: transparent;
+          color: var(--color-primary);
+          font-size: 1.5rem;
+        }
+
+        .quote {
+          font-weight: 300;
+        }
       `}
     >
       <Title title="reviews" />
@@ -139,21 +161,23 @@ const Reviews = ({ reviews = [] }) => {
 
           return (
             <article className={position} key={reviewIndex}>
-              <GatsbyImage
-                image={quoteImage}
-                alt={name}
-                className="img"
-              ></GatsbyImage>
-              <h4>{name}</h4>
-              <p>{title}</p>
-              <p>{quote}</p>
+              <div className="img-center">
+                <GatsbyImage
+                  image={quoteImage}
+                  alt={name}
+                  className="img"
+                ></GatsbyImage>
+              </div>
+              <h4 className="name">{name}</h4>
+              <p className="title">{title}</p>
+              <p className="quote">{quote}</p>
             </article>
           )
         })}
-        <button className="prev" onClick={prevSlide}>
+        <button className="prev icon" onClick={prevSlide}>
           <AiOutlineLeft />
         </button>
-        <button className="next" onClick={nextSlide}>
+        <button className="next icon" onClick={nextSlide}>
           <AiOutlineRight />
         </button>
       </div>
