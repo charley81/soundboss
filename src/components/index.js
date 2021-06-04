@@ -9,6 +9,7 @@ import Survey from "./survey"
 import Reviews from "./reviews"
 import Contact from "./contact"
 import Info from "./info"
+import Footer from "./footer"
 
 export {
   Hero,
@@ -22,4 +23,5 @@ export {
   Reviews,
   Contact,
   Info,
+  Footer,
 }

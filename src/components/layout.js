@@ -1,7 +1,7 @@
 import * as React from "react"
 import globalStyles from "../styles/global-styles"
 import { Global } from "@emotion/react"
-import { Nav } from "../components"
+import { Nav, Footer } from "../components"
 
 const Layout = ({ children }) => {
   return (
@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       <Global styles={globalStyles} />
       <Nav />
       <main>{children}</main>
-      <footer></footer>
+      <Footer />
     </>
   )
 }
