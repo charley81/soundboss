@@ -25,6 +25,10 @@ const Info = () => {
             grid-template-columns: 1fr 1fr;
           }
 
+          .company-info {
+            text-transform: capitalize;
+          }
+
           .social-media {
             width: 100%;
           }
@@ -56,13 +60,13 @@ const Info = () => {
           </li>
         </ul>
         <div className="social-media">
-          <a href="https://www.soundcloud.com">
+          <a href="https://www.soundcloud.com" target="_blank">
             <FaSoundcloud className="icon" />
           </a>
-          <a href="https://www.twitter.com">
+          <a href="https://www.twitter.com" target="_blank">
             <FaTwitter className="icon" />
           </a>
-          <a href="https://www.instagram.com">
+          <a href="https://www.instagram.com" target="_blank">
             <FaInstagram className="icon" />
           </a>
         </div>

@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Hero = () => {
   return (
@@ -15,6 +16,18 @@ const Hero = () => {
           height: 100%;
           background-position: bottom;
           position: relative;
+          -webkit-mask-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(rgba(0, 0, 0, 9)),
+            to(rgba(0, 0, 0, 0))
+          );
+          mask-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 9),
+            rgba(0, 0, 0, 0)
+          );
         }
 
         .hero-content {
@@ -53,9 +66,9 @@ const Hero = () => {
         <article>
           <p className="tagline">you dream it! we create it!</p>
           <h1>we make dreams make millions</h1>
-          <a href="/#rooms" className="btn">
+          <AnchorLink to="/#rooms" className="btn">
             room info
-          </a>
+          </AnchorLink>
         </article>
       </div>
     </section>

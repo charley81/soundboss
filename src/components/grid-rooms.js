@@ -111,7 +111,7 @@ const GridRooms = ({ rooms, title }) => {
       </p>
 
       {/* image and hover content */}
-      <div className="section-content">
+      <div className="section-content" id="rooms">
         {rooms.map((room, index) => {
           const { id } = room
           const { name, type } = room.data
