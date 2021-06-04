@@ -1,8 +1,23 @@
 import React from "react"
 import { Title } from "../components"
 import { css } from "@emotion/react"
+import { useForm, ValidationError } from "@formspree/react"
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm("xvodaypq")
+
+  if (state.succeeded) {
+    return (
+      <p
+        css={css`
+          text-align: center;
+        `}
+      >
+        Thanks for joining!
+      </p>
+    )
+  }
+
   return (
     <section
       className="section"
@@ -39,15 +54,23 @@ const Contact = () => {
       </p>
 
       <div className="section-content">
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="name">
             name
             <input type="text" name="name" id="name" required />
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </label>
+
           <label htmlFor="email">
             email
             <input type="email" name="email" id="email" required />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </label>
+
           <label htmlFor="message">
             message
             <textarea
@@ -57,11 +80,16 @@ const Contact = () => {
               rows="10"
               required
             ></textarea>
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </label>
+          <button type="submit" className="btn" disabled={state.submitting}>
+            submit
+          </button>
         </form>
-        <button type="submit" className="btn">
-          submit
-        </button>
       </div>
     </section>
   )
