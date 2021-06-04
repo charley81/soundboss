@@ -8,6 +8,7 @@ import GridRooms from "./grid-rooms"
 import Survey from "./survey"
 import Reviews from "./reviews"
 import Contact from "./contact"
+import Info from "./info"
 
 export {
   Hero,
@@ -20,4 +21,5 @@ export {
   Survey,
   Reviews,
   Contact,
+  Info,
 }

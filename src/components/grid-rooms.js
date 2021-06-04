@@ -105,8 +105,8 @@ const GridRooms = ({ rooms, title }) => {
     >
       {/* title section */}
       <Title title={title || "Rooms"} />
-      <p>
-        Click A Image To View <span className="name">SoundBoss</span> room
+      <p className="tagline">
+        click a image to view <span className="name">SoundBoss</span> room
         info...
       </p>
 

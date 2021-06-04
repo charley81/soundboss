@@ -32,8 +32,8 @@ const About = () => {
     >
       {/* title */}
       <Title title="About" />
-      <p>
-        Some Info About <span className="name">SoundBoss</span> studios...
+      <p className="tagline">
+        some info about <span className="name">SoundBoss</span> studios...
       </p>
 
       {/* content */}
