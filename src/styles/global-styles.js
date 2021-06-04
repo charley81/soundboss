@@ -121,7 +121,7 @@ const globalStyles = css`
     text-transform: uppercase;
     background: var(--color-primary);
     color: var(--color-light);
-    padding: 0.375rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     letter-spacing: var(--spacing);
     display: inline-block;
     font-weight: 400;

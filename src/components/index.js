@@ -7,5 +7,17 @@ import Title from "./title"
 import GridRooms from "./grid-rooms"
 import Survey from "./survey"
 import Reviews from "./reviews"
+import Contact from "./contact"
 
-export { Hero, Layout, Nav, Seo, About, Title, GridRooms, Survey, Reviews }
+export {
+  Hero,
+  Layout,
+  Nav,
+  Seo,
+  About,
+  Title,
+  GridRooms,
+  Survey,
+  Reviews,
+  Contact,
+}

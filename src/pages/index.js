@@ -7,6 +7,7 @@ import {
   GridRooms,
   Survey,
   Reviews,
+  Contact,
 } from "../components"
 import { graphql } from "gatsby"
 
@@ -24,6 +25,7 @@ const IndexPage = ({ data }) => {
       <GridRooms rooms={rooms} title="Hottest Rooms" />
       <Survey />
       <Reviews reviews={reviews} />
+      <Contact />
     </Layout>
   )
 }
