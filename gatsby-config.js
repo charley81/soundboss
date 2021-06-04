@@ -19,6 +19,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
     {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -200,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

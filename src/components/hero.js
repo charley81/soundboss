@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 const Hero = () => {
   return (
@@ -65,9 +66,9 @@ const Hero = () => {
         <article>
           <p className="tagline">you dream it! we create it!</p>
           <h1>we make dreams make millions</h1>
-          <a href="/#rooms" className="btn">
+          <AnchorLink to="/#rooms" className="btn">
             room info
-          </a>
+          </AnchorLink>
         </article>
       </div>
     </section>
