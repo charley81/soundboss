@@ -156,6 +156,10 @@ const globalStyles = css`
     margin: 4rem auto 0;
   }
 
+  .tagline {
+    text-transform: capitalize;
+  }
+
   @media screen and (min-width: 992px) {
     .section-center {
       width: 95vw;

@@ -8,6 +8,7 @@ import {
   Survey,
   Reviews,
   Contact,
+  Info,
 } from "../components"
 import { graphql } from "gatsby"
 
@@ -26,6 +27,7 @@ const IndexPage = ({ data }) => {
       <Survey />
       <Reviews reviews={reviews} />
       <Contact />
+      <Info />
     </Layout>
   )
 }

@@ -48,9 +48,9 @@ const Contact = () => {
       `}
     >
       <Title title="contact" />
-      <p>
-        Get In Touch With Us At <span className="name">SoundBoss</span>{" "}
-        Studios...
+      <p className="tagline">
+        get in touch with us at <span className="name">SoundBoss</span>{" "}
+        studios...
       </p>
 
       <div className="section-content">

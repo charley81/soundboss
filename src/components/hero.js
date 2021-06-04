@@ -51,10 +51,10 @@ const Hero = () => {
       {/* hero content */}
       <div className="hero-content">
         <article>
-          <p className="lead">You dream it, we create it!</p>
-          <h1>We make dreams make millions</h1>
+          <p className="tagline">you dream it! we create it!</p>
+          <h1>we make dreams make millions</h1>
           <a href="/#rooms" className="btn">
-            Room Info
+            room info
           </a>
         </article>
       </div>

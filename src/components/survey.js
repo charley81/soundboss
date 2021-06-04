@@ -110,12 +110,12 @@ const Survey = () => {
       `}
     >
       <Title title="survey" />
-      <p>
-        Which Is Your Favorite Room At <span className="name">SoundBoss</span>
+      <p className="tagline">
+        which is your favorite room at <span className="name">SoundBoss</span>
         studios,
       </p>
-      <p>
-        Click The <span className="green">Green</span> check to vote...
+      <p className="tagline">
+        click the <span className="green">green</span> check to vote...
       </p>
 
       {/* click a "room card" to vote on your favorite studio room */}

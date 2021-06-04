@@ -135,9 +135,9 @@ const Reviews = ({ reviews = [] }) => {
       `}
     >
       <Title title="reviews" />
-      <p>
-        From Some Of Your Favorites At <span className="name">SoundBoss</span>{" "}
-        Studios...
+      <p className="tagline">
+        from some of your favorites at <span className="name">SoundBoss</span>{" "}
+        studios...
       </p>
 
       <div className="section-content">
