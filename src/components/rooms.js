@@ -79,10 +79,13 @@ const Rooms = ({ rooms: data = [], title, page }) => {
       `}
     >
       <Title title={title || "rooms"} />
+      <p>
+        Search By Rooms Type <span className="name">SoundBoss...</span>{" "}
+      </p>
       {page && (
         <SearchButtons
           rooms={data}
-          setRooms={rooms}
+          setRooms={setRooms}
           setBackToAll={setBackToAll}
         />
       )}
