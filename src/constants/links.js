@@ -1,59 +1,61 @@
 import React from "react"
 import { RiSpeakerFill } from "react-icons/ri"
 
-export default [
+const sublinks = [
   {
     page: "services",
     label: "payments",
-    url: `/services/payments`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "services",
     label: "subscribe",
-    url: `/services/subscribe`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "services",
     label: "billing",
-    url: `/services/billing`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "services",
     label: "demo",
-    url: `/services/demo`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "producers",
     label: "plugins",
-    url: `/producers/plugins`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "producers",
     label: "soundpacks",
-    url: `/producers/soundpacks`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "producers",
     label: "software",
-    url: `/producers/software`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "company",
     label: "careers",
-    url: `/company/careers`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
   {
     page: "company",
     label: "billboard",
-    url: `/company/billboard`,
+    url: `/coming-soon/sample`,
     icon: <RiSpeakerFill />,
   },
 ]
+
+export default sublinks

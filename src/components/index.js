@@ -10,6 +10,7 @@ import Reviews from "./reviews"
 import Contact from "./contact"
 import Info from "./info"
 import Footer from "./footer"
+import Sidebar from "./sidebar"
 
 export {
   Hero,
@@ -24,4 +25,5 @@ export {
   Contact,
   Info,
   Footer,
+  Sidebar,
 }
