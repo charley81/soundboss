@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useContext } from "react"
 import { CgMenuGridO } from "react-icons/cg"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
+import { GatsbyContext } from "../context/context"
 
 const Nav = () => {
+  const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext)
+
   return (
     <nav
       css={css`
@@ -93,7 +96,7 @@ const Nav = () => {
           <Link to="/">
             <p className="logo">SoundBoss</p>
           </Link>
-          <CgMenuGridO className="menu-icon" />
+          <CgMenuGridO className="menu-icon" onClick={showSidebar} />
         </div>
         <ul className="nav-links">
           <li>
