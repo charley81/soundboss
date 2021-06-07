@@ -11,6 +11,8 @@ import Contact from "./contact"
 import Info from "./info"
 import Footer from "./footer"
 import Sidebar from "./sidebar"
+import Rooms from "./rooms"
+import SearchButtons from "./search-buttons"
 
 export {
   Hero,
@@ -26,4 +28,6 @@ export {
   Info,
   Footer,
   Sidebar,
+  Rooms,
+  SearchButtons,
 }
