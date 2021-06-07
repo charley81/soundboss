@@ -138,7 +138,7 @@ const GridRooms = ({ rooms, title }) => {
 
       {/* go to all rooms page */}
       <div className="btn-wrap">
-        <Link to="/" className="btn">
+        <Link to="/rooms" className="btn">
           All Rooms
         </Link>
       </div>

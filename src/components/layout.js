@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import globalStyles from "../styles/global-styles"
-import { Global } from "@emotion/react"
+import { Global, css } from "@emotion/react"
 import { Nav, Footer, Sidebar } from "../components"
 import { GatsbyContext } from "../context/context"
 
@@ -14,7 +14,19 @@ const Layout = ({ children }) => {
       <Global styles={globalStyles} />
       <Nav />
       {isSidebarOpen && <Sidebar />}
-      <main>{children}</main>
+      <div
+        css={css`
+          display: flex;
+          min-height: 85vh;
+          flex-direction: column;
+
+          main {
+            flex-grow: 1;
+          }
+        `}
+      >
+        <main>{children}</main>
+      </div>
       <Footer />
     </>
   )
