@@ -13,7 +13,7 @@ const Contact = () => {
           text-align: center;
         `}
       >
-        Thanks for joining!
+        Form submitted, thanks for contacting us!
       </p>
     )
   }

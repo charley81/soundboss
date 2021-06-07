@@ -13,6 +13,7 @@ import Footer from "./footer"
 import Sidebar from "./sidebar"
 import Rooms from "./rooms"
 import SearchButtons from "./search-buttons"
+import Navlink from "./navlink"
 
 export {
   Hero,
@@ -30,4 +31,5 @@ export {
   Sidebar,
   Rooms,
   SearchButtons,
+  Navlink,
 }

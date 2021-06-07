@@ -3,9 +3,18 @@ import { CgMenuGridO } from "react-icons/cg"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 import { GatsbyContext } from "../context/context"
+import { Navlink } from "../components"
 
 const Nav = () => {
   const { isSidebarOpen, showSidebar, links } = useContext(GatsbyContext)
+
+  const filteredLinks = [
+    ...new Set(
+      links.map(link => {
+        return link.page
+      })
+    ),
+  ]
 
   return (
     <nav
@@ -34,6 +43,8 @@ const Nav = () => {
           font-size: 1.25rem;
           transition: var(--transition);
           cursor: pointer;
+          background: transparent;
+          border: transparent;
 
           &:hover {
             transform: scale(1.25);
@@ -96,18 +107,16 @@ const Nav = () => {
           <Link to="/">
             <p className="logo">SoundBoss</p>
           </Link>
-          <CgMenuGridO className="menu-icon" onClick={showSidebar} />
+          {!isSidebarOpen && (
+            <button className="menu-icon" onClick={showSidebar}>
+              <CgMenuGridO />
+            </button>
+          )}
         </div>
         <ul className="nav-links">
-          <li>
-            <button>Services</button>
-          </li>
-          <li>
-            <button>Producers</button>
-          </li>
-          <li>
-            <button>Company</button>
-          </li>
+          {filteredLinks.map((page, index) => {
+            return <Navlink key={index} page={page} />
+          })}
         </ul>
       </div>
     </nav>
