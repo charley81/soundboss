@@ -56,10 +56,10 @@ const Navlink = ({ page }) => {
           &:hover {
             color: var(--color-primary);
           }
-        }
 
-        .icon {
-          color: red;
+          .icon {
+            color: var(--color-primary);
+          }
         }
 
         .caret {
