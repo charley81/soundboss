@@ -117,11 +117,10 @@ const GridRooms = ({ rooms, title }) => {
           const { id } = room
           const { name, type } = room.data
           const image = room.data.image.localFiles[0]
-          const slug = slugify(name, { lower: true })
 
           return (
             <Link
-              to={`/${slug}`}
+              to={`/${id}`}
               key={id}
               className={`room-link article-${index}`}
             >
