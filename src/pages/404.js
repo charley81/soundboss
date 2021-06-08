@@ -12,6 +12,10 @@ const NotFoundPage = () => (
         text-align: center;
         margin-top: 10vh;
 
+        p {
+          margin-top: 1rem;
+        }
+
         .btn {
           margin-top: 2rem;
         }
