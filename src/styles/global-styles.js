@@ -158,6 +158,7 @@ const globalStyles = css`
 
   .tagline {
     text-transform: capitalize;
+    margin-top: 1rem;
   }
 
   @media screen and (min-width: 992px) {

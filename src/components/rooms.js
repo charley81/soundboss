@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { Title, SearchButtons } from "../components"
 import { css } from "@emotion/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import slugify from "slugify"
 
 const Rooms = ({ rooms: data = [], title, page }) => {
   const [rooms, setRooms] = useState(data)
@@ -96,21 +97,23 @@ const Rooms = ({ rooms: data = [], title, page }) => {
           const { name, type, image } = room.data
 
           return (
-            <article key={id}>
-              <div className="container">
-                <GatsbyImage
-                  image={getImage(image.localFiles[0])}
-                  alt={name}
-                  className="img"
-                />
+            <Link to={`/${id}`} key={id}>
+              <article>
+                <div className="container">
+                  <GatsbyImage
+                    image={getImage(image.localFiles[0])}
+                    alt={name}
+                    className="img"
+                  />
 
-                <div className="info">
-                  <p>{type}</p>
-                  <h3>{name}</h3>
-                  <p className="click">Click For More Info</p>
+                  <div className="info">
+                    <p>{type}</p>
+                    <h3>{name}</h3>
+                    <p className="click">Click For More Info</p>
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+            </Link>
           )
         })}
       </div>
