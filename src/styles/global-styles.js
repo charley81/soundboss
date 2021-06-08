@@ -42,6 +42,14 @@ const globalStyles = css`
     background: var(--colo-mid);
     color: var(--color-dark);
     font-size: 0.875rem;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: 900px) {
+      font-size: 2rem;
+    }
   }
 
   ul,
