@@ -3,6 +3,7 @@ import { Title } from "../components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
+import slugify from "slugify"
 
 const GridRooms = ({ rooms, title }) => {
   return (
@@ -116,9 +117,14 @@ const GridRooms = ({ rooms, title }) => {
           const { id } = room
           const { name, type } = room.data
           const image = room.data.image.localFiles[0]
+          const slug = slugify(name, { lower: true })
 
           return (
-            <Link to="/" key={id} className={`room-link article-${index}`}>
+            <Link
+              to={`/${slug}`}
+              key={id}
+              className={`room-link article-${index}`}
+            >
               <article className={`article-${index}`}>
                 <GatsbyImage
                   image={getImage(image)}
