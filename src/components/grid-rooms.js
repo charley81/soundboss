@@ -3,7 +3,6 @@ import { Title } from "../components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
-import slugify from "slugify"
 
 const GridRooms = ({ rooms, title }) => {
   return (

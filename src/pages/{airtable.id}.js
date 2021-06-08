@@ -1,14 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, Title, Contact, Info } from "../components"
+import { Layout, Title, Contact, Info, SEO } from "../components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 
 const RoomInfoTemplate = ({ data }) => {
-  const { id } = data.airtable
-  const { name, equipment, type, price, image } = data.airtable.data
+  const { name, equipment, price, image } = data.airtable.data
   return (
     <Layout>
+      <SEO title={name} description={`${name} at SoundBoss Studios`} />
       <section
         className="section"
         css={css`
@@ -47,11 +47,14 @@ const RoomInfoTemplate = ({ data }) => {
 
             li {
               margin: 1rem 0;
+              border-bottom: 1px dotted var(--color-dark);
+              padding-bottom: 0.25rem;
+              text-transform: uppercase;
             }
           }
 
           .equipment-items {
-            margin: 1rem 0;
+            margin-top: 2rem;
           }
         `}
       >
@@ -80,7 +83,7 @@ const RoomInfoTemplate = ({ data }) => {
             <h4>Equipment:</h4>
             <ul className="equipment-items">
               {equipment.map((item, index) => {
-                return <li key={index}>- {item}</li>
+                return <li key={index}>{item}</li>
               })}
             </ul>
           </div>

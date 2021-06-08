@@ -5,9 +5,7 @@ import { Nav, Footer, Sidebar } from "../components"
 import { GatsbyContext } from "../context/context"
 
 const Layout = ({ children }) => {
-  const { links, showSidebar, hideSidebar, isSidebarOpen } = useContext(
-    GatsbyContext
-  )
+  const { isSidebarOpen } = useContext(GatsbyContext)
 
   return (
     <>
