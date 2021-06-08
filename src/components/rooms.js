@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import { Title, SearchButtons } from "../components"
-import { css } from "@emotion/react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import slugify from "slugify"
+import { css } from "@emotion/react"
 
 const Rooms = ({ rooms: data = [], title, page }) => {
   const [rooms, setRooms] = useState(data)

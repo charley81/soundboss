@@ -9,6 +9,7 @@ import {
   Reviews,
   Contact,
   Info,
+  SEO,
 } from "../components"
 import { graphql } from "gatsby"
 
@@ -20,7 +21,10 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo
+        title="Home Page"
+        description="SoundBoss is a professional recording studio located in Atlanta Georgia and is home to many major artist and hits heard today"
+      />
       <Hero />
       <About />
       <GridRooms rooms={rooms} title="Hottest Rooms" />
