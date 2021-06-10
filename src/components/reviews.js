@@ -115,6 +115,9 @@ const Reviews = ({ reviews = [] }) => {
 
         .name {
           color: var(--color-primary);
+          font-size: 1.5rem;
+          font-weight: 700;
+          text-transform: uppercase;
         }
 
         .title {
@@ -165,16 +168,24 @@ const Reviews = ({ reviews = [] }) => {
                   className="img"
                 />
               </div>
-              <h4 className="name">{name}</h4>
+              <p className="name">{name}</p>
               <p className="title">{title}</p>
               <p className="quote">{quote}</p>
             </article>
           )
         })}
-        <button className="prev icon" onClick={prevSlide}>
+        <button
+          className="prev icon"
+          onClick={prevSlide}
+          aria-label="move left"
+        >
           <AiOutlineLeft />
         </button>
-        <button className="next icon" onClick={nextSlide}>
+        <button
+          className="next icon"
+          onClick={nextSlide}
+          aria-label="move right"
+        >
           <AiOutlineRight />
         </button>
       </div>
