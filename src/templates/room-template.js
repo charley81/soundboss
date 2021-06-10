@@ -4,7 +4,7 @@ import { Layout, Title, Contact, Info, Seo } from "../components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 
-const RoomInfoTemplate = ({ data }) => {
+const RoomTemplate = ({ data }) => {
   const { name, equipment, price, image } = data.airtable.data
   return (
     <Layout>
@@ -100,12 +100,14 @@ const RoomInfoTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query GetRoomInfo($id: String) {
-    airtable(id: { eq: $id }, table: { eq: "Rooms" }) {
+  query GetRoomInfo($recordId: String) {
+    airtable(recordId: { eq: $recordId }, table: { eq: "Rooms" }) {
+      id
+      table
+      recordId
       data {
         name
         equipment
-        type
         price
         image {
           localFiles {
@@ -115,9 +117,8 @@ export const query = graphql`
           }
         }
       }
-      id
     }
   }
 `
 
-export default RoomInfoTemplate
+export default RoomTemplate

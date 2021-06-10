@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Layout, Rooms, Seo } from "../components"
-import { css } from "@emotion/react"
 
 const RoomsPage = ({ data }) => {
   const {
@@ -25,8 +24,12 @@ export const query = graphql`
       sort: { fields: data___date, order: DESC }
     ) {
       nodes {
+        id
+        recordId
         data {
           date
+          name
+          type
           image {
             localFiles {
               childImageSharp {
@@ -34,10 +37,7 @@ export const query = graphql`
               }
             }
           }
-          name
-          type
         }
-        id
       }
     }
   }

@@ -113,13 +113,13 @@ const GridRooms = ({ rooms, title }) => {
       {/* image and hover content */}
       <div className="section-content" id="rooms">
         {rooms.map((room, index) => {
-          const { id } = room
+          const { id, recordId } = room
           const { name, type } = room.data
           const image = room.data.image.localFiles[0]
 
           return (
             <Link
-              to={`/${id}`}
+              to={`/${recordId}`}
               key={id}
               className={`room-link article-${index}`}
             >
