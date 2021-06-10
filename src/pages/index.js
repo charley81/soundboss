@@ -9,7 +9,6 @@ import {
   Reviews,
   Contact,
   Info,
-  SEO,
 } from "../components"
 import { graphql } from "gatsby"
 

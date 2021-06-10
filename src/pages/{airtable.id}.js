@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, Title, Contact, Info, SEO } from "../components"
+import { Layout, Title, Contact, Info, Seo } from "../components"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 
@@ -8,7 +8,7 @@ const RoomInfoTemplate = ({ data }) => {
   const { name, equipment, price, image } = data.airtable.data
   return (
     <Layout>
-      <SEO title={name} description={`${name} at SoundBoss Studios`} />
+      <Seo title={name} description={`${name} at SoundBoss Studios`} />
       <section
         className="section"
         css={css`
