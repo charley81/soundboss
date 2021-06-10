@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Layout, Rooms, Seo } from "../components"
-import { css } from "@emotion/react"
 
 const RoomsPage = ({ data }) => {
   const {
