@@ -25,8 +25,12 @@ export const query = graphql`
       sort: { fields: data___date, order: DESC }
     ) {
       nodes {
+        id
+        recordId
         data {
           date
+          name
+          type
           image {
             localFiles {
               childImageSharp {
@@ -34,10 +38,7 @@ export const query = graphql`
               }
             }
           }
-          name
-          type
         }
-        id
       }
     }
   }

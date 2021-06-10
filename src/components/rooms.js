@@ -92,11 +92,11 @@ const Rooms = ({ rooms: data = [], title, page }) => {
 
       <div className="section-content">
         {rooms.map(room => {
-          const { id } = room
+          const { id, recordId } = room
           const { name, type, image } = room.data
 
           return (
-            <Link to={`/${id}`} key={id}>
+            <Link to={`/${recordId}`} key={id}>
               <article>
                 <div className="container">
                   <GatsbyImage

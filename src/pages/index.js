@@ -44,6 +44,8 @@ export const query = graphql`
     ) {
       nodes {
         id
+        table
+        recordId
         data {
           name
           type
@@ -61,6 +63,8 @@ export const query = graphql`
       nodes {
         id
         data {
+          quote
+          title
           name
           image {
             localFiles {
@@ -74,8 +78,6 @@ export const query = graphql`
               }
             }
           }
-          quote
-          title
         }
       }
     }
