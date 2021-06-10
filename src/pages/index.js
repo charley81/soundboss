@@ -5,7 +5,6 @@ import {
   Seo,
   About,
   GridRooms,
-  Survey,
   Reviews,
   Contact,
   Info,
@@ -14,10 +13,10 @@ import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
   const {
-    rooms: { nodes: rooms },
-    customers: { nodes: reviews },
+    rooms: { edges: rooms },
+    reviews: { nodes: reviews },
   } = data
-
+  console.log(reviews)
   return (
     <Layout>
       <Seo
@@ -27,7 +26,6 @@ const IndexPage = ({ data }) => {
       <Hero />
       <About />
       <GridRooms rooms={rooms} title="Hottest Rooms" />
-      <Survey />
       <Reviews reviews={reviews} />
       <Contact />
       <Info />
@@ -37,47 +35,28 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    rooms: allAirtable(
-      filter: { table: { eq: "Rooms" } }
-      limit: 4
-      sort: { fields: data___date, order: DESC }
-    ) {
-      nodes {
-        id
-        table
-        recordId
-        data {
+    rooms: allContentfulRooms(filter: { featured: { eq: true } }) {
+      edges {
+        node {
           name
           type
+          id
           image {
-            localFiles {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
+            gatsbyImageData
           }
         }
       }
     }
-    customers: allAirtable(filter: { table: { eq: "Customers" } }) {
+    reviews: allContentfulReviews {
       nodes {
         id
-        data {
+        title
+        name
+        quote {
           quote
-          title
-          name
-          image {
-            localFiles {
-              childImageSharp {
-                gatsbyImageData(
-                  height: 150
-                  width: 150
-                  placeholder: TRACED_SVG
-                  layout: FIXED
-                )
-              }
-            }
-          }
+        }
+        image {
+          gatsbyImageData(height: 150, width: 150, placeholder: TRACED_SVG)
         }
       }
     }

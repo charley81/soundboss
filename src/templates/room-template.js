@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { css } from "@emotion/react"
 
 const RoomTemplate = ({ data }) => {
-  const { name, equipment, price, image } = data.airtable.data
+  const { name, equipment, price, image } = data.contentfulRooms
   return (
     <Layout>
       <Seo title={name} description={`${name} at SoundBoss Studios`} />
@@ -59,11 +59,7 @@ const RoomTemplate = ({ data }) => {
         `}
       >
         {/* image */}
-        <GatsbyImage
-          image={getImage(image.localFiles[0])}
-          alt={name}
-          className="img"
-        />
+        <GatsbyImage image={getImage(image)} alt={name} className="img" />
 
         <section className="section">
           {/* room info */}
@@ -82,7 +78,7 @@ const RoomTemplate = ({ data }) => {
           <div className="equipment">
             <h4>Equipment:</h4>
             <ul className="equipment-items">
-              {equipment.map((item, index) => {
+              {equipment.list.map((item, index) => {
                 return <li key={index}>{item}</li>
               })}
             </ul>
@@ -100,22 +96,16 @@ const RoomTemplate = ({ data }) => {
 }
 
 export const query = graphql`
-  query GetRoomInfo($recordId: String) {
-    airtable(recordId: { eq: $recordId }, table: { eq: "Rooms" }) {
+  query GetRoomInfo($name: String) {
+    contentfulRooms(name: { eq: $name }) {
       id
-      table
-      recordId
-      data {
-        name
-        equipment
-        price
-        image {
-          localFiles {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
-            }
-          }
-        }
+      name
+      price
+      equipment {
+        list
+      }
+      image {
+        gatsbyImageData
       }
     }
   }

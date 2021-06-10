@@ -4,8 +4,10 @@ import { Layout, Rooms, Seo } from "../components"
 
 const RoomsPage = ({ data }) => {
   const {
-    allAirtable: { nodes: rooms },
+    allContentfulRooms: { nodes: rooms },
   } = data
+
+  console.log(rooms)
   return (
     <Layout>
       <Seo
@@ -19,24 +21,13 @@ const RoomsPage = ({ data }) => {
 
 export const query = graphql`
   {
-    allAirtable(
-      filter: { table: { eq: "Rooms" } }
-      sort: { fields: data___date, order: DESC }
-    ) {
+    allContentfulRooms {
       nodes {
         id
-        recordId
-        data {
-          date
-          name
-          type
-          image {
-            localFiles {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
+        name
+        type
+        image {
+          gatsbyImageData
         }
       }
     }

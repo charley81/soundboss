@@ -1,42 +1,33 @@
 const path = require(`path`)
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  return new Promise(async resolve => {
-    const result = await graphql(`
-      {
-        allAirtable {
-          edges {
-            node {
-              table
-              recordId
-              data {
-                equipment
-                name
-                price
-                image {
-                  localFiles {
-                    childImageSharp {
-                      gatsbyImageData
-                    }
-                  }
-                }
-              }
-            }
+
+  const result = await graphql(`
+    query GetRooms {
+      allContentfulRooms {
+        nodes {
+          id
+          name
+          price
+          equipment {
+            list
+          }
+          image {
+            gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
           }
         }
       }
-    `)
+    }
+  `)
 
-    result.data.allAirtable.edges.forEach(({ node }) => {
-      createPage({
-        path: `/${node.recordId}`,
-        component: path.resolve(`./src/templates/room-template.js`),
-        context: {
-          recordId: node.recordId,
-        },
-      })
+  result.data.allContentfulRooms.nodes.forEach(room => {
+    createPage({
+      path: `/${room.name}`,
+      component: path.resolve(`src/templates/room-template.js`),
+      context: {
+        name: room.name,
+      },
     })
-    resolve()
   })
 }

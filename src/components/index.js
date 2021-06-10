@@ -5,7 +5,6 @@ import Seo from "./seo"
 import About from "./about"
 import Title from "./title"
 import GridRooms from "./grid-rooms"
-import Survey from "./survey"
 import Reviews from "./reviews"
 import Contact from "./contact"
 import Info from "./info"
@@ -23,7 +22,6 @@ export {
   About,
   Title,
   GridRooms,
-  Survey,
   Reviews,
   Contact,
   Info,

@@ -136,17 +136,14 @@ const Reviews = ({ reviews = [] }) => {
     >
       <Title title="reviews" />
       <p className="tagline">
-        from some of your favorites at <span className="name">SoundBoss</span>{" "}
+        from some of your favorites at <span className="name">SoundBoss</span>
         studios...
       </p>
 
       <div className="section-content">
         {reviews.map((review, reviewIndex) => {
-          const {
-            data: { image, title, quote, name },
-          } = review
-
-          const quoteImage = getImage(image.localFiles[0])
+          const { image, title, name } = review
+          const { quote } = review.quote
 
           let position = "nextSlide"
           if (reviewIndex === index) {
@@ -163,10 +160,10 @@ const Reviews = ({ reviews = [] }) => {
             <article className={position} key={reviewIndex}>
               <div className="img-center">
                 <GatsbyImage
-                  image={quoteImage}
+                  image={getImage(image)}
                   alt={name}
                   className="img"
-                ></GatsbyImage>
+                />
               </div>
               <h4 className="name">{name}</h4>
               <p className="title">{title}</p>

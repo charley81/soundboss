@@ -38,22 +38,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-airtable`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        apiKey: process.env.GATSBY_AIRTABLE_API, // may instead specify via env, see below
-        concurrency: 5, // default, see using markdown and attachments for more information
-        tables: [
-          {
-            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
-            tableName: `Rooms`,
-            mapping: { image: `fileNode` }, // optional, e.g. "text/markdown", "fileNode"
-          },
-          {
-            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
-            tableName: `Customers`,
-            mapping: { image: `fileNode` }, // optional, e.g. "text/markdown", "fileNode"
-          },
-        ],
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
     {
