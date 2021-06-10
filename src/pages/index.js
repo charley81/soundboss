@@ -13,38 +13,37 @@ import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => {
   const {
-    rooms: { nodes: rooms },
+    rooms: { edges: rooms },
     reviews: { nodes: reviews },
   } = data
-
+  console.log(reviews)
   return (
     <Layout>
       <Seo
         title="Home Page"
         description="SoundBoss is a professional recording studio located in Atlanta Georgia and is home to many major artist and hits heard today"
       />
-      {/* <Hero />
+      <Hero />
       <About />
       <GridRooms rooms={rooms} title="Hottest Rooms" />
       <Reviews reviews={reviews} />
       <Contact />
-      <Info /> */}
+      <Info />
     </Layout>
   )
 }
 
 export const query = graphql`
   {
-    rooms: allContentfulRooms(
-      filter: { featured: { eq: true } }
-      sort: { fields: name, order: DESC }
-    ) {
-      nodes {
-        id
-        name
-        type
-        image {
-          gatsbyImageData(placeholder: TRACED_SVG, layout: CONSTRAINED)
+    rooms: allContentfulRooms(filter: { featured: { eq: true } }) {
+      edges {
+        node {
+          name
+          type
+          id
+          image {
+            gatsbyImageData
+          }
         }
       }
     }

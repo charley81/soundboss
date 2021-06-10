@@ -8,7 +8,7 @@ const SearchButtons = ({ rooms, setRooms, setBackToAll }) => {
     "all",
     ...new Set(
       rooms.map(room => {
-        return room.data.type
+        return room.type
       })
     ),
   ]
