@@ -19,6 +19,7 @@
     "gatsby-plugin-react-helmet": "^4.4.0",
     "gatsby-plugin-sharp": "^3.4.1",
     "gatsby-source-airtable": "^2.2.0",
+    "gatsby-source-contentful": "^5.7.0",
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-sharp": "^3.4.0",
     "react": "^17.0.1",
