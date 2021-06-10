@@ -14,7 +14,6 @@ import Sidebar from "./sidebar"
 import Rooms from "./rooms"
 import SearchButtons from "./search-buttons"
 import Navlink from "./navlink"
-import SEO from "./seo"
 
 export {
   Hero,
@@ -33,5 +32,4 @@ export {
   Rooms,
   SearchButtons,
   Navlink,
-  SEO,
 }

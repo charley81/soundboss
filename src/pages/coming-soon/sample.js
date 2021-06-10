@@ -1,11 +1,15 @@
 import React from "react"
-import { Layout } from "../../components"
+import { Layout, Seo } from "../../components"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 
 const SamplePage = () => {
   return (
     <Layout>
+      <Seo
+        title="Coming Soon"
+        description="future content coming to SoundBoss studios"
+      />
       <section
         className="section"
         css={css`

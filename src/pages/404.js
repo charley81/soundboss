@@ -1,11 +1,11 @@
 import * as React from "react"
-import { Layout, SEO } from "../components"
+import { Layout, Seo } from "../components"
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" description="page not found" />
+    <Seo title="404: Not found" description="page not found" />
     <section
       className="section"
       css={css`
