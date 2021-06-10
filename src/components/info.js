@@ -60,13 +60,28 @@ const Info = () => {
           </li>
         </ul>
         <div className="social-media">
-          <a href="https://www.soundcloud.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.soundcloud.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Soundcloud"
+          >
             <FaSoundcloud className="icon" />
           </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.twitter.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Twitter"
+          >
             <FaTwitter className="icon" />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+          >
             <FaInstagram className="icon" />
           </a>
         </div>
