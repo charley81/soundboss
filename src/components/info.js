@@ -19,6 +19,10 @@ const Info = () => {
           color: var(--color-primary);
         }
 
+        .company-info {
+          text-transform: capitalize;
+        }
+
         @media screen and (min-width: 768px) {
           .section-content {
             display: grid;
@@ -26,7 +30,7 @@ const Info = () => {
           }
 
           .company-info {
-            text-transform: capitalize;
+            text-align: left;
           }
 
           .social-media {
