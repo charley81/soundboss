@@ -38,7 +38,6 @@ const Hero = () => {
           height: 100%;
           display: grid;
           place-items: center;
-          margin-top: -10rem;
         }
 
         article {
@@ -59,7 +58,7 @@ const Hero = () => {
         layout="fullWidth"
         placeholder="tracedSVG"
         className="hero-img"
-      ></StaticImage>
+      />
 
       {/* hero content */}
       <div className="hero-content">

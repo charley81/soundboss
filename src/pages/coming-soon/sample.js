@@ -1,5 +1,5 @@
 import React from "react"
-import { Layout, Seo } from "../../components"
+import { Contact, Info, Layout, Seo } from "../../components"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 
@@ -16,6 +16,10 @@ const SamplePage = () => {
           text-align: center;
           margin-top: 10vh;
 
+          header {
+            margin-bottom: 4rem;
+          }
+
           p {
             margin-top: 1rem;
           }
@@ -25,15 +29,19 @@ const SamplePage = () => {
           }
         `}
       >
-        {" "}
-        <h1>Coming Soon...</h1>
-        <p>
-          This page is reserved for future content coming soon to{" "}
-          <span className="name">SoundBoss</span> studios.
-        </p>
-        <Link to="/" className="btn">
-          back home
-        </Link>
+        <header>
+          <h1>Coming Soon...</h1>
+          <p>
+            This page is reserved for future content coming soon to{" "}
+            <span className="name">SoundBoss</span> studios.
+          </p>
+          <Link to="/" className="btn">
+            back home
+          </Link>
+        </header>
+
+        <Contact />
+        <Info />
       </section>
     </Layout>
   )

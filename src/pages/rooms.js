@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Layout, Rooms, Seo } from "../components"
+import { Contact, Info, Layout, Rooms, Seo } from "../components"
 
 const RoomsPage = ({ data }) => {
   const {
@@ -15,6 +15,8 @@ const RoomsPage = ({ data }) => {
         description="View studio rooms at SoundBoss studios for information about the studio room and equipment"
       />
       <Rooms title="our rooms" rooms={rooms} page />
+      <Contact />
+      <Info />
     </Layout>
   )
 }
